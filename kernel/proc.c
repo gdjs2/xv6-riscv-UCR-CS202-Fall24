@@ -729,6 +729,7 @@ void proc_set_tickets(int tickets) {
   acquire(&p->lock);
   p->tickets = tickets;
   p->stride = STRIDE1 / p->tickets;
+  p->pass = p->stride;
   release(&p->lock);
 }
 
